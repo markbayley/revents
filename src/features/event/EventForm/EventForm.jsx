@@ -12,9 +12,21 @@ class EventForm extends Component {
         hostedBy: ''
     };
 
+    componentDidMount() {
+        if (this.props.selectedEvent !== null) {
+            this.setState({
+                ...this.props.selectedEvent
+            })
+        }
+    }
+
     handleFormSubmit = evt => {
         evt.preventDefault();
-        console.log(this.state);
+        if (this.state.id) {
+            this.props.updateEvent(this.state);
+        } else {
+            this.props.createEvent(this.state);
+        }
     };
 
     handleInputChange = ({target: {name, value}}) => {
@@ -40,7 +52,8 @@ class EventForm extends Component {
                         <label>Event Date</label>
                         <input name='date' 
                                onChange={this.handleInputChange} 
-                               value={date} 
+                               value={date}
+                               type='date' 
                                placeholder="Event Date" />
                     </Form.Field>
                     <Form.Field>
