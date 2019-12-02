@@ -6,8 +6,6 @@ import EventDetailedInfo from './EventDetailedInfo';
 import EventDetailedChat from './EventDetailedChat';
 import EventDetailedSidebar from './EventDetailedSidebar';
 
-
-
 const mapState = (state, ownProps) => {
     const eventId = ownProps.match.params.id;
 

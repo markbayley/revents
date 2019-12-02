@@ -42,11 +42,12 @@ class BasicPage extends Component {
            width={8}
            name='dateofbirth'
            component={DateInput}
-           placeholder='Date of Birth'
            dateFormat='dd LLL yyyy'
            showYearDropdown={true}
            showMonthDropdown={true}
-           dropdownMode='select'        
+           dropdownMode='select'
+           placeholder='Date of Birth'
+           //maxDate={addYears(new Date(), -18)}        
           />
           <Field
             name='city'
